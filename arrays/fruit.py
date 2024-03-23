@@ -15,8 +15,6 @@ def getMinimumFruits(fruits):
     
     odd_count_fruits = sum(1 for count in fruit_counts.values() if count % 2 != 0)
     
-    # If there are no fruits with an odd count, we can potentially crush all fruits, leaving 0.
-    # However, if there are fruits with an odd count, we'll have at least one fruit left for each odd-count type.
     min_fruits_left = max(1, odd_count_fruits) if odd_count_fruits > 0 else 0
     
     return min_fruits_left
