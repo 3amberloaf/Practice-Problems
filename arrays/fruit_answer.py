@@ -13,14 +13,15 @@ def getMinimumFruits(fruits):
         else:
             fruit_counts[fruit] = 1
     
-    odd_count_fruits = sum(1 for count in fruit_counts.values() if count % 2 != 0)
+    even_count_fruits = sum(1 for count in fruit_counts.values() if count % 2 == 0)
+    """ sums the fruit counts who have an even modulo"""
     
-    min_fruits_left = max(1, odd_count_fruits) if odd_count_fruits > 0 else 0
+    min_fruits_left = max(1, even_count_fruits) if even_count_fruits > 0 else 0
     
     return min_fruits_left
 
 # Example usage
 n = 5
-fruits = [3, 3, 1, 1, 2]
+fruits = [1, 2, 5, 6, 6, 6, 6]
 result = getMinimumFruits(fruits)
 print(result)
