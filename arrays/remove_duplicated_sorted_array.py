@@ -10,11 +10,11 @@ class Solution:
         
         k = 1  # since the first element is always unique if the list is not empty
         for i in range(1, len(nums)):  # start from the second element
-            if nums[i] != nums[i-1]:  # compare with the previous element
+            if nums[i] != nums[k-1]:  # compare with the previous element
                 nums[k] = nums[i]  # move unique element to the next position for unique elements
                 k += 1  # increase count of unique elements
         
-        return k
+        return k, nums[:k]
 
 nums = [1, 2, 3, 3, 4, 4]
 result = Solution.removeDuplicates(nums)
